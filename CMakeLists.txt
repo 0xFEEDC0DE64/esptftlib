@@ -1,4 +1,5 @@
 set(headers
+    src/icon.h
     src/tftinterface.h
 )
 

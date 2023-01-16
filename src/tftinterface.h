@@ -3,6 +3,9 @@
 // system includes
 #include <cstdint>
 
+// local includes
+#include "icon.h"
+
 namespace espgui {
 class TftInterface
 {
@@ -73,6 +76,16 @@ public:
     virtual void     fillTriangle(int32_t x1,int32_t y1, int32_t x2,int32_t y2, int32_t x3,int32_t y3, uint32_t color) = 0;
 
     // These are used to render images or sprites stored in RAM arrays (used by Sprite class for 16bpp Sprites)
+    template<uint16_t width, uint16_t height>
+    void pushImage(int32_t x, int32_t y, const Icon<width, height> &icon)
+    {
+        pushImage(x, y, width, height, icon.buffer);
+    }
+    template<uint16_t width, uint16_t height>
+    void pushImage(int32_t x, int32_t y, const Icon<width, height> &icon, uint16_t transparent)
+    {
+        pushImage(x, y, width, height, icon.buffer, transparent);
+    }
     virtual void     pushImage(int32_t x, int32_t y, int32_t w, int32_t h, const uint16_t *data) = 0;
     virtual void     pushImage(int32_t x, int32_t y, int32_t w, int32_t h, const uint16_t *data, uint16_t transparent) = 0;
 
