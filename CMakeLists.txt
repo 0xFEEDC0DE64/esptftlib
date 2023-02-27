@@ -11,7 +11,6 @@ set(dependencies
     cxx-ring-buffer
     espchrono
     espcpputils
-    expected
     espwifistack
     fmt
 )
