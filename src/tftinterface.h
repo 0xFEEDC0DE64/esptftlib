@@ -23,6 +23,7 @@ public:
     virtual void     pushBlock(uint16_t color, uint32_t len) = 0;
 
     virtual void     drawPixel(int32_t x, int32_t y, uint16_t color) = 0;
+    virtual void     drawArc(int32_t x, int32_t y, int32_t r, int32_t ir, uint32_t startAngle, uint32_t endAngle, uint32_t fg_color, uint32_t bg_color, bool smoothArc = true) = 0;
     virtual void     drawLine(int32_t xs, int32_t ys, int32_t xe, int32_t ye, uint16_t color) = 0;
     virtual void     drawFastVLine(int32_t x, int32_t y, int32_t h, uint16_t color) = 0;
     virtual void     drawFastHLine(int32_t x, int32_t y, int32_t w, uint16_t color) = 0;
